@@ -45,7 +45,8 @@ def background_composite(
     if not isinstance(image, Image.Image):
         image = Image.fromarray(image)
 
-    image = image.convert("RGBA")
+    if image.size[-1] < 3:
+        image = image.convert("RGBA")
 
     composite = Image.fromarray(
         np.full([*list(image.size[::-1]), 4], fill, dtype=np.uint8),
