@@ -42,6 +42,9 @@ def background_composite(
         >>> plt.show()
 
     """
+    if image.shape[2] >= 4:
+        return np.asarray(image)
+
     if not isinstance(image, Image.Image):
         image = Image.fromarray(image)
 
