@@ -3119,6 +3119,8 @@ class VirtualWSIReader(WSIReader):
 
         if self.mode == "rgb":
             return utils.transforms.background_composite(image=im_region, alpha=False)
+        # if self.mode != "rgb":
+
         return im_region
 
     def read_bounds(
