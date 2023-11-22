@@ -41,6 +41,7 @@ def background_composite(
         >>> plt.imshow(img_back_composite)
         >>> plt.show()
 
+
     """
     if image.shape[2] >= 4:
         return np.asarray(image)
